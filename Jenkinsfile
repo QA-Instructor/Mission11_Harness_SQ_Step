@@ -14,7 +14,7 @@ pipeline {
       }
         steps {
             withSonarQubeEnv('sonarqube-student4') {        
-              sh "${scannerHome}/bin/sonar-scanner"
+              sh "${scannerHome}/bin/jenkens-sonarqube-test-job"
             }   
         }
     }
