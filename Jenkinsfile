@@ -13,10 +13,11 @@ pipeline {
         scannerHome = tool 'sonarqube'
       }
         steps {
-            withSonarQubeEnv('sonar-qube-1') {        
+            withSonarQubeEnv('sonarqube-student4') {        
               sh "${scannerHome}/bin/sonar-scanner"
             }   
         }
     }
   }
 }
+
