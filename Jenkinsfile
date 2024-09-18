@@ -5,7 +5,7 @@ pipeline {
     stage('Checkout') {
         steps {
           // Get some code from a GitHub repository
-          git branch: 'main', url: 'git branch: 'main', url: 'https://github.com/huskyrat/lbg-vat-calculator'
+          git branch: 'main', url: 'git branch: 'main', url: 'https://github.com/huskyrat/lbg-vat-calculator.git'
         }
     }
     stage('SonarQube Analysis') {
@@ -13,8 +13,8 @@ pipeline {
         scannerHome = tool 'sonarqube'
       }
         steps {
-            withSonarQubeEnv('sonarqube-student4') {        
-              sh "${scannerHome}/bin/jenkens-sonarqube-test-job"
+            withSonarQubeEnv('sonar-qube-1') {        
+              sh "${scannerHome}/bin/sonar-scanner"
             }   
         }
     }
