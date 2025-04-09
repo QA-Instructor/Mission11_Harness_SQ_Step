@@ -1,0 +1,37 @@
+pipeline:
+  name: use sonarqube step to scan
+  identifier: use_sonarqube_step_to_scan
+  projectIdentifier: SonarQube_Test_Project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: Mission11_Alternative_Repo
+        build: <+input>
+  stages:
+    - stage:
+        name: SQ Stage
+        identifier: SQ_Stage
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: echo step
+                  identifier: echo_step
+                  spec:
+                    shell: Sh
+                    command: echo "Start"
