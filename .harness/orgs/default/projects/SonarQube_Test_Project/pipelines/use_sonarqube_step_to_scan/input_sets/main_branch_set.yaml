@@ -1,0 +1,14 @@
+inputSet:
+  name: main branch set
+  identifier: main_branch_set
+  orgIdentifier: default
+  projectIdentifier: SonarQube_Test_Project
+  pipeline:
+    identifier: use_sonarqube_step_to_scan
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: main
