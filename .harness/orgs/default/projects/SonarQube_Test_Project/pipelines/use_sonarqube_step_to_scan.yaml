@@ -55,3 +55,10 @@ pipeline:
                       ssl: true
                     tool:
                       project_key: demo-project
+              - step:
+                  type: Run
+                  name: echo output variable
+                  identifier: echo_output_variable
+                  spec:
+                    shell: Sh
+                    command: echo <+pipeline.stages.SQ_Stage.spec.execution.steps.Sonarqube_scan_code.output.outputVariables.INFO>
