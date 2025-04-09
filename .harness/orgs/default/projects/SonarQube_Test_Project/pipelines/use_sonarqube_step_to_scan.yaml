@@ -50,6 +50,6 @@ pipeline:
                         level: info
                     connectorRef: account.harnessImage
                     auth:
-                      access_token: <+secrets.sonartoken>
+                      access_token: <+secrets.sonarqube>
                       domain: http://35.206.188.23:9000/
                       ssl: true
