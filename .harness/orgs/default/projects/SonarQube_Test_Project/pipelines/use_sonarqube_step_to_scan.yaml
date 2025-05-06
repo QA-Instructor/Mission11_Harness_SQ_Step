@@ -47,7 +47,8 @@ pipeline:
                       detection: auto
                     advanced:
                       log:
-                        level: info
+                        level: debug
+                      fail_on_severity: low
                     connectorRef: account.harnessImage
                     auth:
                       access_token: <+secrets.getValue("sonarqube")>
